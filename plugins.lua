@@ -24,6 +24,11 @@ local plugins = {
 
   -- override plugin configs
   {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
+  },
+
+  {
     "williamboman/mason.nvim",
     opts = overrides.mason
   },
@@ -71,18 +76,25 @@ local plugins = {
 
   {
     "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    lazy = false,
     config = function()
       vim.schedule(function()
-        require("copilot").setup()
+        require("copilot").setup({
+          suggestion = { enabled = false },
+          panel = { enabled = false },
+          filetypes = {
+            gitcommit = true,
+            markdown = true,
+            nix = true,
+            yaml = true,
+          },
+        })
       end)
     end,
   },
 
   {
     "zbirenbaum/copilot-cmp",
-    lazy = false,
+    event = "InsertEnter",
     config = function()
       require("copilot_cmp").setup()
     end,
