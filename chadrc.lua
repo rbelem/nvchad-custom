@@ -23,6 +23,20 @@ M.ui = {
       { "  Mappings", "Spc c h", "NvCheatsheet" },
     },
   },
+
+  -- Add column number
+  statusline = {
+    overriden_modules = function ()
+      local st_modules = require "nvchad_ui.statusline.default"
+      return {
+        cursor_position = function()
+          local _, col = table.unpack(vim.api.nvim_win_get_cursor(0))
+          local cp = st_modules.cursor_position()
+          return cp .. (col + 1) .. " "
+        end,
+      }
+    end
+  },
 }
 
 M.plugins = "custom.plugins"
