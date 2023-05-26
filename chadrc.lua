@@ -30,9 +30,7 @@ M.ui = {
       local st_modules = require "nvchad_ui.statusline.default"
       return {
         cursor_position = function()
-          local _, col = table.unpack(vim.api.nvim_win_get_cursor(0))
-          local cp = st_modules.cursor_position()
-          return cp .. (col + 1) .. " "
+          return st_modules.cursor_position() .. "%05l:%05c "
         end,
       }
     end
