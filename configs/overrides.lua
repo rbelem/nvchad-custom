@@ -67,6 +67,7 @@ M.mason = {
     "gitlint",
 
     -- go
+    "golangci-lint",
     "golangci-lint-langserver",
     "goimports",
     "goimports-reviser",
