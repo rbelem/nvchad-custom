@@ -14,10 +14,10 @@ M.ui = {
   nvdash = {
     load_on_startup = true,
     buttons = {
-      { "  Recent Sessions", "Spc s h", "SessionManager load_session" },
+      { "󰃰  Recent Sessions", "Spc s h", "SessionManager load_session" },
       { "  Find File", "Spc f f", "Telescope find_files" },
-      { "  Recent Files", "Spc f o", "Telescope oldfiles" },
-      { "  Find Word", "Spc f w", "Telescope live_grep" },
+      { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
+      { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
       { "  Bookmarks", "Spc b m", "Telescope marks" },
       { "  Themes", "Spc t h", "Telescope themes" },
       { "  Mappings", "Spc c h", "NvCheatsheet" },
