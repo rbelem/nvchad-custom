@@ -51,7 +51,6 @@ M.treesitter = {
 M.mason = {
   ensure_installed = {
     -- general
-    "codespell",
     "ltex-ls",
 
     -- ansible
