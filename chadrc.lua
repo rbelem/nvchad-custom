@@ -14,6 +14,8 @@ M.ui = {
   nvdash = {
     load_on_startup = true,
     buttons = {
+      { "  Current Directory Session", "Spc s .", "SessionManager load_current_dir_session" },
+      { "  Last Session", "Spc s l", "SessionManager load_last_session" },
       { "󰃰  Recent Sessions", "Spc s h", "SessionManager load_session" },
       { "  Find File", "Spc f f", "Telescope find_files" },
       { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
