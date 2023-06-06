@@ -36,6 +36,7 @@ lspconfig.ltex.setup {
     ltex = {
       language = "en-GB",
       additionalRules = {
+        enablePickyRules = true,
         motherTongue = "pt-BR",
       },
       languageToolHttpServerUri = "https://api.languagetool.org",
