@@ -9,6 +9,7 @@ local servers = {
   "dockerls",
   "gopls",
   "jsonls",
+  "ltex",
   "marksman",
   "nil_ls",
   "perlnavigator",
@@ -30,3 +31,19 @@ end
 
 --
 -- lspconfig.pyright.setup { blabla}
+lspconfig.ltex.setup {
+  settings = {
+    ltex = {
+      language = "en-GB",
+      additionalRules = {
+        motherTongue = "pt-BR",
+      },
+      languageToolHttpServerUri = "https://api.languagetool.org",
+      languageToolOrg = {
+        username = "",
+        apiKey = ""
+      },
+      completionEnabled = true,
+    }
+  }
+}

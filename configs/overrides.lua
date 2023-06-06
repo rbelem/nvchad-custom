@@ -52,6 +52,7 @@ M.mason = {
   ensure_installed = {
     -- general
     "codespell",
+    "ltex-ls",
 
     -- ansible
     "ansible-language-server",
