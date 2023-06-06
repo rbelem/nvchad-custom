@@ -39,7 +39,7 @@ lspconfig.ltex.setup {
         enablePickyRules = true,
         motherTongue = "pt-BR",
       },
-      languageToolHttpServerUri = "https://api.languagetoolplus.com/v2/",
+      languageToolHttpServerUri = "https://api.languagetoolplus.com/",
       languageToolOrg = {
         username = "",
         apiKey = ""
