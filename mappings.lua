@@ -14,6 +14,9 @@ M.disabled = {
 
     -- new vertical term
     ["<leader>v"] = "",
+
+    -- toggle nvimtree
+    ["<C-n>"] = "",
   }
 }
 
