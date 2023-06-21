@@ -2,25 +2,7 @@
 local M = {}
 
 M.disabled = {
-  i = {
-    -- go to  beginning and end
-    ["<C-b>"] = "",
-    ["<C-e>"] = "",
-
-    -- navigate within insert mode
-    ["<C-h>"] = "",
-    ["<C-l>"] = "",
-    ["<C-j>"] = "",
-    ["<C-k>"] = "",
-  },
-
   n = {
-    -- switch between windows
-    ["<C-h>"] = "",
-    ["<C-l>"] = "",
-    ["<C-j>"] = "",
-    ["<C-k>"] = "",
-
     -- save
     ["<C-s>"] = "",
 
