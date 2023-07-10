@@ -15,6 +15,7 @@ local servers = {
   "perlnavigator",
   "pylsp",
   "salt_ls",
+  "sqlls",
   "taplo",
   "terraformls",
   "tflint",
