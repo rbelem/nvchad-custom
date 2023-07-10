@@ -34,6 +34,7 @@ M.treesitter = {
     "perl",
     "python",
     "regex",
+    "sql",
     "terraform",
     "toml",
     "typescript",
@@ -106,6 +107,9 @@ M.mason = {
     "bash-language-server",
     "shfmt",
     "shellcheck",
+
+    -- sql
+    "sqlls",
 
     -- terraform
     "terraform-ls",
