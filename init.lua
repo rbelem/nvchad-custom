@@ -10,6 +10,11 @@ local vim = vim
 local opt = vim.opt
 
 --
+-- General settings
+--
+opt.swapfile = false
+
+--
 -- Visual settings
 --
 
