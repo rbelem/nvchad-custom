@@ -112,6 +112,11 @@ local plugins = {
     lazy = false,
     priority = 1001,
   },
+
+  {
+    "sindrets/diffview.nvim",
+    cmd = "DiffviewOpen",
+  },
 }
 
 return plugins
