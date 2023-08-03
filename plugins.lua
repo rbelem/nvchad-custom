@@ -117,6 +117,20 @@ local plugins = {
     "sindrets/diffview.nvim",
     cmd = "DiffviewOpen",
   },
+
+  {
+    "aserowy/tmux.nvim",
+    opts = {
+      copy_sync = {
+        enable = true,
+        sync_clipboard = true,
+        sync_registers = true,
+      },
+      resize = {
+        enable_default_keybindings = false,
+      },
+    }
+  },
 }
 
 return plugins
