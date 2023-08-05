@@ -28,14 +28,7 @@ M.ui = {
 
   -- Add column number
   statusline = {
-    overriden_modules = function ()
-      local st_modules = require "nvchad_ui.statusline.default"
-      return {
-        cursor_position = function()
-          return st_modules.cursor_position() .. "%05l:%05c "
-        end,
-      }
-    end
+    theme = "minimal"
   },
 }
 
