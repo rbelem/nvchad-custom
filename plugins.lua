@@ -119,6 +119,23 @@ local plugins = {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    event = "VeryLazy",
+    config = true,
+  },
+
+  {
+    "nvim-treesitter/playground",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    cmd = "TSPlaygroundToggle",
+  },
+
+  {
     "aserowy/tmux.nvim",
     opts = {
       copy_sync = {
