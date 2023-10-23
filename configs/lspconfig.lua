@@ -17,3 +17,15 @@ lspconfig.ltex.setup {
     }
   }
 }
+
+lspconfig.perlnavigator.setup {
+  settings = {
+    perlnavigator = {
+      perlPath = 'perl',
+      enableWarnings = true,
+      perltidyProfile = '',
+      perlcriticProfile = '',
+      perlcriticEnabled = true,
+    }
+  }
+}
