@@ -11,7 +11,7 @@ parser_config.perl = {
 }
 
 
-M.treesitter = {
+M.opts = {
   ensure_installed = {
     "bash",
     "css",

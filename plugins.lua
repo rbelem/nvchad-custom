@@ -42,7 +42,7 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = require "custom.configs.treesitter"
+    opts = require("custom.configs.treesitter").opts
   },
 
   {
