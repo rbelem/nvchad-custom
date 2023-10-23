@@ -30,8 +30,10 @@ M.general = {
 
 M.bufferline = {
   n = {
-    ["<tab>"] = { "<cmd> bnext<CR>", "Goto next buffer" },
-    ["<S-tab>"] = { "<cmd> bprev<CR>", "Goto prev buffer" },
+    ["<tab>"] = { "<cmd> BufferLineCycleNext<CR>", "Goto next buffer" },
+    ["<S-tab>"] = { "<cmd> BufferLineCyclePrev<CR>", "Goto prev buffer" },
+    ["<C-tab>"] = { "<cmd> BufferLineMoveNext<CR>", "Move buffer to next position" },
+    ["<C-S-tab>"] = { "<cmd> BufferLineMovePrev<CR>", "Move buffer prev to previous position" },
     ["<leader>x"] = { "<cmd> Bdelete<CR>", "Close buffer" },
   },
 }
