@@ -83,6 +83,15 @@ local plugins = {
         if next(vim.fn.argv()) ~= nil then
           return false
         end
+
+        local p = require('persisted')
+        local cwd = vim.fn.getcwd():gsub(p.utils.get_dir_pattern(), "%%")
+        local session_filename =  p.config.options.save_dir .. cwd  .. p.get_branch() .. ".vim"
+        if vim.fn.filereadable(session_filename) then
+          vim.api.nvim_echo({ {'Session already exists!\n'}, {'Save the session manually.'} }, true, {})
+          return false
+        end
+
         if vim.tbl_contains({ "nvdash", "gitcommit", "" }, vim.bo.filetype) then
           return false
         end
