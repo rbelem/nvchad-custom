@@ -121,6 +121,11 @@ local plugins = {
   },
 
   {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+  },
+
+  {
     "willothy/flatten.nvim",
     opts = require("custom.configs.flatten").opts,
     -- Ensure that it runs first to minimize delay when opening file from terminal
