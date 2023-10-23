@@ -182,6 +182,11 @@ local plugins = {
   },
 
   {
+    "FabijanZulj/blame.nvim",
+    cmd = "ToggleBlame",
+  },
+
+  {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle", "Trouble" },
     config = function()
