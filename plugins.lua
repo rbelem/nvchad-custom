@@ -106,6 +106,27 @@ local plugins = {
     end,
   },
 
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    event = { "BufEnter" },
+    opts = {
+      options = {
+        theme = "onedark",
+        component_separators = '|',
+        section_separators = '',
+      },
+      extensions = {
+        "man",
+        "nvim-tree",
+        "symbols-outline",
+        "trouble"
+      },
+    },
+  },
+
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
