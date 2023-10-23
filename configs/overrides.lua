@@ -14,8 +14,13 @@ M.cmp = {
 M.mason = {
   ensure_installed = {
     -- general
+    "ltex-ls",
+    --
     "prettier",
     "tree-sitter-cli",
+
+    -- ansible
+    "ansible-language-server",
 
     -- docker
     "hadolint",
@@ -24,22 +29,67 @@ M.mason = {
     "gitlint",
 
     -- go
+    "golangci-lint-langserver",
+    "gopls",
+    --
     "golangci-lint",
     "goimports",
     "goimports-reviser",
 
+    -- html
+    "html-lsp",
+
+    -- javascript
+    "deno",
+    "eslint_d",
+
+    -- json
+    "json-lsp",
+
     -- lua
+    "lua-language-server",
     "stylua",
 
+    -- markdown
+    "marksman",
+
+    -- nix
+    "nil",
+
+    -- perl
+    "perlnavigator",
+
     -- python
+    "python-lsp-server",
+    --
     "black",
     "flake8",
 
+    -- saltstack
+    "salt-lsp",
+
     -- shellscript
+    "bash-language-server",
+    --
     "shfmt",
     "shellcheck",
 
+    -- sql
+    "sqlls",
+
+    -- terraform
+    "terraform-ls",
+    "tflint",
+
+    -- toml
+    "taplo",
+
+    -- typescript
+    "typescript-language-server",
+
     -- yaml
+    "yaml-language-server",
+    --
     "yamlfmt",
     "yamllint",
   },
