@@ -124,7 +124,10 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter",
     },
     event = "VeryLazy",
-    config = true,
+    opts = {
+      mode = "topline",
+      separator = "-",
+    },
   },
 
   {
