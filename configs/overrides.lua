@@ -14,16 +14,10 @@ M.cmp = {
 M.mason = {
   ensure_installed = {
     -- general
-    "ltex-ls",
-
-    -- ansible
-    "ansible-language-server",
-
-    -- css
-    "css-lsp",
+    "prettier",
+    "tree-sitter-cli",
 
     -- docker
-    "dockerfile-language-server",
     "hadolint",
 
     -- git
@@ -31,63 +25,51 @@ M.mason = {
 
     -- go
     "golangci-lint",
-    "golangci-lint-langserver",
     "goimports",
     "goimports-reviser",
-    "gopls",
-
-    -- html
-    "html-lsp",
-
-    -- javascript
-    "deno",
-    "eslint_d",
-
-    -- json
-    "json-lsp",
 
     -- lua
-    "lua-language-server",
     "stylua",
 
-    -- markdown
-    "marksman",
-
-    -- nix
-    "nil",
-
-    -- perl
-    "perlnavigator",
-
     -- python
-    "python-lsp-server",
-
-    -- saltstack
-    "salt-lsp",
+    "black",
+    "flake8",
 
     -- shellscript
-    "bash-language-server",
     "shfmt",
     "shellcheck",
 
-    -- sql
-    "sqlls",
-
-    -- terraform
-    "terraform-ls",
-    "tflint",
-
-    -- toml
-    "taplo",
-
-    -- typescript
-    "typescript-language-server",
-
     -- yaml
     "yamlfmt",
-    "yaml-language-server",
     "yamllint",
   },
+}
+
+M.mason_lspconfig = {
+  "ansiblels",
+  "bashls",
+  "cssls",
+  "denols",
+  "docker_compose_language_service",
+  "dockerls",
+  "eslint",
+  "golangci_lint_ls",
+  "gopls",
+  "html",
+  "jsonls",
+  "ltex",
+  "lua_ls",
+  "marksman",
+  "nil_ls",
+  "perlnavigator",
+  "pyright",
+  "salt_ls",
+  "sqlls",
+  "taplo",
+  "terraformls",
+  "tflint",
+  "tsserver",
+  "yamlls",
 }
 
 -- git support in nvimtree

@@ -8,6 +8,7 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
+      "williamboman/mason-lspconfig.nvim",
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
@@ -31,6 +32,12 @@ local plugins = {
   {
     "williamboman/mason.nvim",
     opts = overrides.mason
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = overrides.mason_lspconfig,
+    dependencies = {"williamboman/mason.nvim"},
   },
 
   {
