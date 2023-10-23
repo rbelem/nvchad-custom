@@ -130,7 +130,7 @@ local plugins = {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-    event = "VeryLazy",
+    event = "LspAttach",
     opts = {
       mode = "topline",
       separator = "-",
