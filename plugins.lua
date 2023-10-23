@@ -66,21 +66,6 @@ local plugins = {
   },
 
   {
-    "stevearc/resession.nvim",
-    dependencies = {
-      "tiagovla/scope.nvim",
-    },
-    cmd = {
-      "ResessionDelete",
-      "ResessionLoad",
-      "ResessionSave",
-      "ResessionSaveAll",
-      "ResessionSaveTab",
-    },
-    config = require("custom.configs.resession"),
-  },
-
-  {
     "famiu/bufdelete.nvim",
     event = "BufRead",
   },
@@ -163,6 +148,33 @@ local plugins = {
   --   "folke/which-key.nvim",
   --   enabled = true,
   -- },
+
+  {
+    "rmagatti/auto-session",
+    cmd = {
+      "SessionSave",
+      "SessionRestore",
+      "SessionRestoreFromFile",
+      "SessionDelete",
+      "Autosession",
+    },
+    lazy = false,
+    opts = require("custom.configs.auto-session").opts
+  },
+
+  {
+    "rmagatti/session-lens",
+    dependencies = {
+      "rmagatti/auto-session",
+      "nvim-telescope/telescope.nvim"
+    },
+    cmd = "SearchSession",
+    opts = require("custom.configs.auto-session").sl_opts,
+    config = function(_, options)
+      require("session-lens").setup(options)
+      require("telescope").load_extension("session-lens")
+    end,
+  },
 
   {
     "FabijanZulj/blame.nvim",
