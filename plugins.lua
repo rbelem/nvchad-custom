@@ -72,34 +72,22 @@ local plugins = {
   -- },
 
   {
-    "olimorris/persisted.nvim",
-    event = "VeryLazy",
+    "gennaro-tedesco/nvim-possession",
     dependencies = {
-        'nvim-telescope/telescope.nvim'
+      "ibhagwan/fzf-lua",
+      "nvim-tree/nvim-tree.lua"
     },
+    event = "VeryLazy",
     opts = {
-      use_git_branch = true,
-      should_autosave = function()
-        if vim.tbl_contains({ "gitcommit", "nvdash", "NvimTree", "" }, vim.bo.filetype) then
-          return false
-        end
-
-        local save = true
-
-        vim.ui.select({ "Save", "No" }, { prompt = "Save session before leave?" }, function(option)
-          if option == "No" then
-            save = false
-          end
-        end)
-
-        return save
-      end
-
-    },
-    config = function(_, options)
-      require("persisted").setup(options)
-      require("telescope").load_extension("persisted")
-    end,
+      autosave = true,
+      autoswitch = {
+        enable = true,
+      },
+      save_hook = function()
+        local ok, api = pcall(require, "nvim-tree.api")
+        if ok then api.tree.close_in_all_tabs() end
+      end,
+    }
   },
 
   {

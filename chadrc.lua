@@ -14,9 +14,7 @@ M.ui = {
   nvdash = {
     load_on_startup = true,
     buttons = {
-      { "  Current Dir Session", "Spc s .", "SessionLoad" },
-      { "  Session List", "Spc s h", "Telescope persisted" },
-      { "  Last Session", "Spc s l", "SessionLoadLast" },
+      { "  Session List", "Spc s l", ":lua require(\"nvim-possession\").list()" },
       { "  Find File", "Spc f f", "Telescope find_files" },
       { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
       { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
