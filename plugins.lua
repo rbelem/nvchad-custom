@@ -72,13 +72,20 @@ local plugins = {
   -- },
 
   {
-    "Shatur/neovim-session-manager",
+    "jedrzejboczar/possession.nvim",
     lazy = false,
-    config = function()
-      require('session_manager').setup {
-        autoload_mode = require('session_manager.config').AutoloadMode.Disabled,
-      }
-    end,
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      autosave = {
+        current = true,
+        tmp = true,
+      },
+    },
+    telescope = {
+      list = {
+        mappings = {},
+      },
+    },
   },
 
   {
