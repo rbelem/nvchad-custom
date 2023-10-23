@@ -79,6 +79,15 @@ local plugins = {
     },
     opts = {
       use_git_branch = true,
+      should_autosave = function()
+        if next(vim.fn.argv()) ~= nil then
+          return false
+        end
+        if vim.tbl_contains({ "nvdash", "gitcommit", "" }, vim.bo.filetype) then
+          return false
+        end
+        return true
+      end
     },
     config = function(_, options)
       require("persisted").setup(options)
