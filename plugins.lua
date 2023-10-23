@@ -72,20 +72,18 @@ local plugins = {
   -- },
 
   {
-    "jedrzejboczar/possession.nvim",
-    lazy = false,
-    dependencies = { "nvim-lua/plenary.nvim" },
+    "olimorris/persisted.nvim",
+    event = "VeryLazy",
+    dependencies = {
+        'nvim-telescope/telescope.nvim'
+    },
     opts = {
-      autosave = {
-        current = true,
-        tmp = true,
-      },
+      use_git_branch = true,
     },
-    telescope = {
-      list = {
-        mappings = {},
-      },
-    },
+    config = function(_, options)
+      require("persisted").setup(options)
+      require("telescope").load_extension("persisted")
+    end,
   },
 
   {

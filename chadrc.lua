@@ -14,7 +14,9 @@ M.ui = {
   nvdash = {
     load_on_startup = true,
     buttons = {
-      { "  Session List", "Spc s h", "Telescope possession list" },
+      { "  Current Dir Session", "Spc s .", "SessionLoad" },
+      { "  Session List", "Spc s h", "Telescope persisted" },
+      { "  Last Session", "Spc s l", "SessionLoadLast" },
       { "  Find File", "Spc f f", "Telescope find_files" },
       { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
       { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },

@@ -65,14 +65,13 @@ M.nvimtree = {
   },
 }
 
-M.possession = {
+M.session_manager = {
   n = {
-    ["<leader>ss"] = { "<cmd> PossessionSave<CR>", "Quick session save" },
-    ["<leader>sl"] = { "<cmd> PossessionLoad<CR>", "Load last session" },
-    ["<leader>sr"] = { "<cmd> PossessionRename<CR>", "Rename session" },
-    ["<leader>sx"] = { "<cmd> PossessionClose<CR>", "Close session" },
-    ["<leader>sd"] = { "<cmd> PossessionDelete<CR>", "Delete session" },
-    ["<leader>sh"] = { "<cmd> Telescope possession list<CR>", "List sessions" },
+    ["<leader>ss"] = { "<cmd> SessionSave<CR>", "Save current session" },
+    ["<leader>sh"] = { "<cmd> Telescope persisted<CR>", "Session list" },
+    ["<leader>sl"] = { "<cmd> SessionLoadLast<CR>", "Load last session" },
+    ["<leader>sd"] = { "<cmd> SessionDelete<CR>", "Delete current session" },
+    ["<leader>s."] = { "<cmd> SessionLoad<CR>", "Load current directory session" },
   },
 }
 
