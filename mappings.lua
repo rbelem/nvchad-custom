@@ -78,11 +78,10 @@ M.nvimtree = {
 
 M.session_manager = {
   n = {
-    ["<leader>sl"] = { "<cmd> SearchSession <CR>", "Session list" },
-    ["<leader>ss"] = { "<cmd> SessionSave <CR>", "Session save" },
-    ["<leader>sr"] = { "<cmd> SessionRestore <CR>", "Session restore" },
-    ["<leader>sd"] = { "<cmd> Autosession delete<CR>", "Session delete" },
-    ["<leader>sD"] = { "<cmd> SessionDelete <CR>", "Session delete current" },
+    ["<leader>sl"] = { "<cmd> :lua require(\"nvim-possession\").list()<CR>", "Session list" },
+    ["<leader>sn"] = { "<cmd> :lua require(\"nvim-possession\").new()<CR>", "New Session" },
+    ["<leader>su"] = { "<cmd> :lua require(\"nvim-possession\").update()<CR>", "Session update" },
+    ["<leader>sd"] = { "<cmd> :lua require(\"nvim-possession\").delete()<CR>", "Delete current session" },
   },
 }
 

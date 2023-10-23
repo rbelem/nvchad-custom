@@ -150,30 +150,13 @@ local plugins = {
   -- },
 
   {
-    "rmagatti/auto-session",
-    cmd = {
-      "SessionSave",
-      "SessionRestore",
-      "SessionRestoreFromFile",
-      "SessionDelete",
-      "Autosession",
-    },
-    lazy = false,
-    opts = require("custom.configs.auto-session").opts
-  },
-
-  {
-    "rmagatti/session-lens",
+    "gennaro-tedesco/nvim-possession",
     dependencies = {
-      "rmagatti/auto-session",
-      "nvim-telescope/telescope.nvim"
+      "ibhagwan/fzf-lua",
+      "nvim-tree/nvim-tree.lua"
     },
-    cmd = "SearchSession",
-    opts = require("custom.configs.auto-session").sl_opts,
-    config = function(_, options)
-      require("session-lens").setup(options)
-      require("telescope").load_extension("session-lens")
-    end,
+    event = "VeryLazy",
+    opts = require("custom.configs.nvim-possession").opts
   },
 
   {

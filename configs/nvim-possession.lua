@@ -29,7 +29,7 @@ M.opts = {
   save_hook = function()
     close_nvimtree()
     require("nvterm.terminal").close_all_terms()
-    -- close_blacklisted_buf()
+    close_blacklisted_buf()
   end,
 }
 
