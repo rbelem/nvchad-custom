@@ -78,16 +78,7 @@ local plugins = {
       "nvim-tree/nvim-tree.lua"
     },
     event = "VeryLazy",
-    opts = {
-      autosave = true,
-      autoswitch = {
-        enable = true,
-      },
-      save_hook = function()
-        local ok, api = pcall(require, "nvim-tree.api")
-        if ok then api.tree.close_in_all_tabs() end
-      end,
-    }
+    opts = require("custom.configs.nvim-possession").opts
   },
 
   {
