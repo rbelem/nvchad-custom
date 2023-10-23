@@ -96,6 +96,11 @@ local plugins = {
   },
 
   {
+    "FabijanZulj/blame.nvim",
+    cmd = "ToggleBlame",
+  },
+
+  {
     "zbirenbaum/copilot.lua",
     config = function()
       vim.schedule(function()
@@ -125,6 +130,11 @@ local plugins = {
   },
 
   {
+    "sindrets/diffview.nvim",
+    cmd = "DiffviewOpen",
+  },
+
+  {
     "willothy/flatten.nvim",
     config = true,
     -- or pass configuration with
@@ -132,11 +142,6 @@ local plugins = {
     -- Ensure that it runs first to minimize delay when opening file from terminal
     lazy = false,
     priority = 1001,
-  },
-
-  {
-    "sindrets/diffview.nvim",
-    cmd = "DiffviewOpen",
   },
 
   {
@@ -179,11 +184,6 @@ local plugins = {
         enable_default_keybindings = false,
       },
     }
-  },
-
-  {
-    "FabijanZulj/blame.nvim",
-    cmd = "ToggleBlame",
   },
 
   {
