@@ -54,44 +54,10 @@ local plugins = {
   },
 
   -- Session and buffer manager
-  -- scope.nvim must be placed before resession.nvim
-  {
-    "tiagovla/scope.nvim",
-    dependencies = {
-      "akinsho/bufferline.nvim"
-    },
-    opts = {
-      restore_state = true
-    },
-  },
-
   {
     "famiu/bufdelete.nvim",
     event = "BufRead",
-  },
-
-  {
-    "tiagovla/buffercd.nvim",
-    event = "BufRead",
-  },
-
-  {
-    "akinsho/bufferline.nvim",
-    event = "BufRead",
-    config = function()
-      local bufferline = require('bufferline')
-      bufferline.setup({
-        options = {
-          style_preset = {
-            bufferline.style_preset.minimal,
-            bufferline.style_preset.no_italic,
-          },
-          numbers = "ordinal",
-          offsets = { { filetype = "NvimTree", text = "File Explorer" } },
-        },
-        -- highlights = require("darkrose.integrations.bufferline").generate(),
-      })
-    end,
+    cmd = 'Bdelete'
   },
 
   {
@@ -99,7 +65,7 @@ local plugins = {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    event = { "BufEnter" },
+    event = { "BufRead" },
     opts = {
       options = {
         theme = "onedark",
@@ -109,7 +75,15 @@ local plugins = {
       sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
+        lualine_c = {
+          {
+            'filename',
+            file_status = true,
+            newfile_status = true,
+            path = 4,
+            shorting_target = 30,
+          }
+        },
         lualine_x = {
           'encoding',
           'fileformat',
@@ -118,6 +92,27 @@ local plugins = {
         },
         lualine_y = {'progress'},
         lualine_z = {'location'}
+      },
+      tabline = {
+        lualine_a = {
+          {
+            'buffers',
+            icons_enabled = false,
+            show_filename_only = false,
+            mode = 4,
+            use_mode_colors = true,
+            symbols = {
+              modified = ' ●',
+              alternate_file = '#',
+              directory =  '',
+            },
+          }
+        },
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {'tabs'}
       },
       extensions = {
         "man",
