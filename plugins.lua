@@ -146,6 +146,14 @@ local plugins = {
   },
 
   {
+    "simrat39/symbols-outline.nvim",
+    event = "LspAttach",
+    config = function()
+      require("symbols-outline").setup()
+    end
+  },
+
+  {
     "aserowy/tmux.nvim",
     opts = {
       copy_sync = {
