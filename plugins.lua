@@ -158,6 +158,14 @@ local plugins = {
       },
     }
   },
+
+  {
+    "folke/trouble.nvim",
+    cmd = { "TroubleToggle", "Trouble" },
+    config = function()
+      require("trouble").setup()
+    end
+  },
 }
 
 return plugins
