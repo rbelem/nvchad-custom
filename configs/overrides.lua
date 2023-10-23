@@ -74,14 +74,13 @@ M.mason_lspconfig = {
 
 -- git support in nvimtree
 M.nvimtree = {
+  update_cwd = true, --tiagovla/buffercd.nvim
   update_focused_file = {
     enable = true,
   },
-
   git = {
     enable = true,
   },
-
   renderer = {
     highlight_git = true,
     icons = {

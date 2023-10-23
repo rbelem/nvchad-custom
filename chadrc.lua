@@ -28,6 +28,10 @@ M.ui = {
   statusline = {
     theme = "minimal"
   },
+
+  tabufline = {
+    enabled = false,
+  },
 }
 
 M.plugins = "custom.plugins"

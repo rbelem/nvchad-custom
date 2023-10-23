@@ -27,6 +27,15 @@ M.general = {
 }
 
 -- more keybinds!
+
+M.bufferline = {
+  n = {
+    ["<tab>"] = { "<cmd> bnext<CR>", "Goto next buffer" },
+    ["<S-tab>"] = { "<cmd> bprev<CR>", "Goto prev buffer" },
+    ["<leader>x"] = { "<cmd> Bdelete<CR>", "Close buffer" },
+  },
+}
+
 M.gitsigns = {
   n = {
     ["<leader>hs"] = { "<cmd> Gitsigns stage_hunk<CR>", "Stage hunk" },

@@ -51,8 +51,22 @@ local plugins = {
   },
 
   -- Session and buffer manager
+  -- scope.nvim must be placed before resession.nvim
+  {
+    "tiagovla/scope.nvim",
+    dependencies = {
+      "akinsho/bufferline.nvim"
+    },
+    opts = {
+      restore_state = true
+    },
+  },
+
   {
     "stevearc/resession.nvim",
+    dependencies = {
+      "tiagovla/scope.nvim",
+    },
     cmd = {
       "ResessionDelete",
       "ResessionLoad",
@@ -61,6 +75,35 @@ local plugins = {
       "ResessionSaveTab",
     },
     config = require("custom.configs.resession"),
+  },
+
+  {
+    "famiu/bufdelete.nvim",
+    event = "BufRead",
+  },
+
+  {
+    "tiagovla/buffercd.nvim",
+    event = "BufRead",
+  },
+
+  {
+    "akinsho/bufferline.nvim",
+    event = "BufRead",
+    config = function()
+      local bufferline = require('bufferline')
+      bufferline.setup({
+        options = {
+          style_preset = {
+            bufferline.style_preset.minimal,
+            bufferline.style_preset.no_italic,
+          },
+          numbers = "ordinal",
+          offsets = { { filetype = "NvimTree", text = "File Explorer" } },
+        },
+        -- highlights = require("darkrose.integrations.bufferline").generate(),
+      })
+    end,
   },
 
   -- Install a plugin
