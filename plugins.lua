@@ -27,6 +27,9 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     opts = overrides.cmp,
+    dependencies = {
+      "Exafunction/codeium.nvim"
+    }
   },
 
   {
@@ -118,6 +121,19 @@ local plugins = {
         component_separators = '|',
         section_separators = '',
       },
+      sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_c = {'filename'},
+        lualine_x = {
+          'encoding',
+          'fileformat',
+          'filetype',
+          'codeium'
+        },
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+      },
       extensions = {
         "man",
         "nvim-tree",
@@ -154,32 +170,14 @@ local plugins = {
   },
 
   {
-    "zbirenbaum/copilot.lua",
-    config = function()
-      vim.schedule(function()
-        require("copilot").setup({
-          suggestion = { enabled = false },
-          panel = { enabled = false },
-          filetypes = {
-            gitcommit = true,
-            markdown = true,
-            nix = true,
-            yaml = true,
-          },
-        })
-      end)
-    end,
-  },
-
-  {
-    "zbirenbaum/copilot-cmp",
-    event = "InsertEnter",
-    config = function()
-      require("copilot_cmp").setup()
-    end,
+    "Exafunction/codeium.nvim",
     dependencies = {
-      "zbirenbaum/copilot.lua",
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
     },
+    cmd = "Codeium",
+    build = ":Codeium Auth",
+    opts = {}
   },
 
   {
