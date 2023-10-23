@@ -14,7 +14,7 @@ M.ui = {
   nvdash = {
     load_on_startup = true,
     buttons = {
-      { "  Session List", "Spc s l", "SearchSession" },
+      { "  Load Session", "Spc s l", "ResessionLoad" },
       { "  Find File", "Spc f f", "Telescope find_files" },
       { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
       { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },

@@ -67,11 +67,11 @@ M.nvimtree = {
 
 M.session_manager = {
   n = {
-    ["<leader>sl"] = { "<cmd> SearchSession <CR>", "Session list" },
-    ["<leader>ss"] = { "<cmd> SessionSave <CR>", "Session save" },
-    ["<leader>sr"] = { "<cmd> SessionRestore <CR>", "Session restore" },
-    ["<leader>sd"] = { "<cmd> Autosession delete<CR>", "Session delete" },
-    ["<leader>sD"] = { "<cmd> SessionDelete <CR>", "Session delete current" },
+    ["<leader>sl"] = { "<cmd> ResessionLoad <CR>", "Load Session" },
+    ["<leader>sa"] = { "<cmd> ResessionSaveAll <CR>", "Save All Sessions" },
+    ["<leader>ss"] = { "<cmd> ResessionSave <CR>", "Save Session" },
+    ["<leader>st"] = { "<cmd> ResessionSaveTab <CR>", "Save Tab Session" },
+    ["<leader>sd"] = { "<cmd> ResessionDelete<CR>", "Session delete" },
   },
 }
 

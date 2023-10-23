@@ -50,6 +50,19 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  -- Session and buffer manager
+  {
+    "stevearc/resession.nvim",
+    cmd = {
+      "ResessionDelete",
+      "ResessionLoad",
+      "ResessionSave",
+      "ResessionSaveAll",
+      "ResessionSaveTab",
+    },
+    config = require("custom.configs.resession"),
+  },
+
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -70,33 +83,6 @@ local plugins = {
   --   "folke/which-key.nvim",
   --   enabled = true,
   -- },
-
-  {
-    "rmagatti/auto-session",
-    cmd = {
-      "SessionSave",
-      "SessionRestore",
-      "SessionRestoreFromFile",
-      "SessionDelete",
-      "Autosession",
-    },
-    lazy = false,
-    opts = require("custom.configs.auto-session").opts
-  },
-
-  {
-    "rmagatti/session-lens",
-    dependencies = {
-      "rmagatti/auto-session",
-      "nvim-telescope/telescope.nvim"
-    },
-    cmd = "SearchSession",
-    opts = require("custom.configs.auto-session").sl_opts,
-    config = function(_, options)
-      require("session-lens").setup(options)
-      require("telescope").load_extension("session-lens")
-    end,
-  },
 
   {
     "FabijanZulj/blame.nvim",
