@@ -53,7 +53,13 @@ local config = function (_, options)
 
   vim.api.nvim_create_user_command("ResessionSave",
     function()
-      resession.save()
+      if resession.get_current() == "last" then
+        vim.ui.input({ prompt = 'Enter session name: ' }, function(input)
+          resession.save(input)
+        end)
+      else
+        resession.save()
+      end
     end,
     { bang = true, nargs = "*", desc = "Save Session" }
   )
