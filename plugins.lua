@@ -87,9 +87,19 @@ local plugins = {
 
   -- Session and buffer manager
   {
-    "famiu/bufdelete.nvim",
-    event = "BufRead",
-    cmd = 'Bdelete'
+    'romgrk/barbar.nvim',
+    dependencies = {
+      'lewis6991/gitsigns.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+    event = "BufReadPre",
+    opts = {
+      preset = 'powerline',
+      sidebar_filetypes = {
+        NvimTree = true,
+        Outline = {event = 'BufWinLeave', text = 'symbols-outline'},
+      },
+    },
   },
 
   {
@@ -97,7 +107,7 @@ local plugins = {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    event = { "BufRead" },
+    event = "BufReadPre",
     opts = {
       options = {
         theme = "onedark",
@@ -124,27 +134,6 @@ local plugins = {
         },
         lualine_y = {'progress'},
         lualine_z = {'location'}
-      },
-      tabline = {
-        lualine_a = {
-          {
-            'buffers',
-            icons_enabled = false,
-            show_filename_only = false,
-            mode = 4,
-            use_mode_colors = true,
-            symbols = {
-              modified = ' ●',
-              alternate_file = '#',
-              directory =  '',
-            },
-          }
-        },
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {'tabs'}
       },
       extensions = {
         "man",

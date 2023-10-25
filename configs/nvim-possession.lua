@@ -13,7 +13,7 @@ local close_blacklisted_buf = function()
       if vim.api.nvim_buf_is_valid(bufnr)
         and vim.api.nvim_buf_get_option(bufnr, 'buflisted')
         and vim.tbl_contains(ft_blacklist, bufft) then
-          vim.cmd("Bdelete " .. bufnr)
+          vim.cmd("BufferClose " .. bufnr)
       end
   end
 end
@@ -32,16 +32,8 @@ M.opts = {
     close_nvimtree()
     require("nvterm.terminal").close_all_terms()
     close_blacklisted_buf()
-  end,
-  post_hook = function()
-    local buflist = vim.api.nvim_list_bufs()
-    for _, bufnr in ipairs(buflist) do
-      if vim.api.nvim_buf_is_valid(bufnr)
-        and vim.api.nvim_buf_get_option(bufnr, 'buflisted')
-        and vim.api.nvim_buf_get_name(bufnr) == '' then
-          vim.cmd("Bdelete " .. bufnr)
-      end
-    end
+    -- persisting barbar.nvim state
+    vim.api.nvim_exec_autocmds('User', {pattern = 'SessionSavePre'})
   end
 }
 

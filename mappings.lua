@@ -9,6 +9,9 @@ M.disabled = {
     -- Copy all
     ["<C-c>"] = "",
 
+    -- new buffer
+    ["<leader>b"] = "",
+
     -- new horizontal term
     ["<leader>h"] = "",
 
@@ -28,13 +31,14 @@ M.general = {
 
 -- more keybinds!
 
-M.bufferline = {
+M.barbar = {
   n = {
-    ["<tab>"] = { "<cmd> bnext<CR>", "Goto next buffer" },
-    ["<S-tab>"] = { "<cmd> bprevious<CR>", "Goto prev buffer" },
-    ["<C-tab>"] = { "<cmd> BufferLineMoveNext<CR>", "Move buffer to next position" },
-    ["<C-S-tab>"] = { "<cmd> BufferLineMovePrev<CR>", "Move buffer prev to previous position" },
-    ["<leader>x"] = { "<cmd> Bdelete<CR>", "Close buffer" },
+    ["<tab>"] = { "<cmd> BufferNext<CR>", "Goto next buffer" },
+    ["<S-tab>"] = { "<cmd> BufferPrevious<CR>", "Goto prev buffer" },
+    ["<C-tab>"] = { "<cmd> BufferMoveNext<CR>", "Move buffer to next position" },
+    ["<C-S-tab>"] = { "<cmd> BufferMovePrev<CR>", "Move buffer prev to previous position" },
+    ["<leader>x"] = { "<cmd> BufferClose<CR>", "Close buffer" },
+    ["<leader>bl"] = { "<cmd> BufferPick<CR>", "List buffers"}
   },
 }
 

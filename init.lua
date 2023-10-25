@@ -13,6 +13,7 @@ local opt = vim.opt
 -- General settings
 --
 opt.swapfile = false
+opt.sessionoptions = "buffers,curdir,folds,globals,tabpages,winpos,winsize"
 
 --
 -- Visual settings
