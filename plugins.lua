@@ -53,6 +53,38 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  -- Theme
+  {
+    "rebelot/kanagawa.nvim",
+    enabled = true,
+    lazy = false, -- make sure we load this during startup
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function ()
+      require("kanagawa").setup {
+        theme = "wave",
+        undercurl = true, -- enable undercurls
+        commentStyle = { italic = true },
+        functionStyle = {},
+        keywordStyle = { italic = true },
+        statementStyle = { bold = true },
+        typeStyle = {},
+        variablebuiltinStyle = { italic = true },
+        specialReturn = true,  -- special highlight for the return keyword
+        specialException = true, -- special highlight for exception handling keywords
+        transparent = false,   -- do not set background color
+        dimInactive = true,    -- dim inactive window `:h hl-NormalNC`
+        globalStatus = false,  -- adjust window separators highlight for laststatus=3
+        terminalColors = true, -- define vim.g.terminal_color_{0,17}
+        background = {         -- map the value of 'background' option to a theme
+          dark = "wave",   -- try "dragon" !
+          light = "lotus",
+        },
+      }
+
+      vim.cmd "colorscheme kanagawa"
+    end
+  },
+
   -- Session and buffer manager
   {
     "famiu/bufdelete.nvim",
