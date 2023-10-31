@@ -198,7 +198,13 @@ local plugins = {
     },
     cmd = "Codeium",
     build = ":Codeium Auth",
-    opts = {}
+    opts = {
+      tools = {
+        language_server = os.getenv("NIXPKGS_CONFIG")
+          and os.getenv("DEVBOX_PACKAGES_DIR") .. "/bin/codeium_language_server"
+          or "",
+      }
+    },
   },
 
   {
