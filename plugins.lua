@@ -4,6 +4,16 @@ local overrides = require("custom.configs.overrides")
 local plugins = {
 
   -- Override plugin definition options
+  {
+    "NvChad/ui",
+    enabled = false,
+  },
+
+  {
+    "rbelem/NvSigma-UI",
+    branch = "nvsigma-v2.0",
+    lazy = false,
+  },
 
   {
     "neovim/nvim-lspconfig",
