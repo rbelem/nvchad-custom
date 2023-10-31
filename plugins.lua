@@ -106,12 +106,15 @@ local plugins = {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    event = "BufReadPre",
+    event = "VeryLazy",
     opts = {
       options = {
         theme = "auto",
         component_separators = '|',
         section_separators = '',
+        disabled_filetypes = {
+          statusline = {'nvdash'}
+        },
       },
       sections = {
         lualine_a = {'mode'},
