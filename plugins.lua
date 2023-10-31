@@ -120,7 +120,7 @@ local plugins = {
     event = "BufReadPre",
     opts = {
       options = {
-        theme = "onedark",
+        theme = "auto",
         component_separators = '|',
         section_separators = '',
       },
