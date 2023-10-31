@@ -26,8 +26,7 @@ M.ui = {
 
   -- Add column number
   statusline = {
-    -- Added an option in my nvchad fork to disable the statusline
-    enabled = false,
+    overriden_modules = false,
   },
 
   tabufline = {

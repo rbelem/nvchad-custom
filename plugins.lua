@@ -5,17 +5,6 @@ local plugins = {
 
   -- Override plugin definition options
   {
-    "NvChad/ui",
-    enabled = false,
-  },
-
-  {
-    "rbelem/NvSigma-UI",
-    branch = "nvsigma-v2.0",
-    lazy = false,
-  },
-
-  {
     "neovim/nvim-lspconfig",
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
