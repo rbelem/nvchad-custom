@@ -192,11 +192,13 @@ local plugins = {
     build = ":Codeium Auth",
     opts = {
       tools = {
-        language_server = os.getenv("NIXPKGS_CONFIG")
-          and os.getenv("DEVBOX_PACKAGES_DIR") .. "/bin/codeium_language_server"
-          or "",
+        language_server = os.getenv("DEVBOX_PACKAGES_DIR") .. "/bin/codeium_language_server"
       }
     },
+    config = function (_, opts)
+      opts = (string.match(vim.loop.os_uname().version, "NixOS") and opts) or {}
+      require("codeium").setup(opts)
+    end
   },
 
   {
