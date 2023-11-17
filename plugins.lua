@@ -192,7 +192,7 @@ local plugins = {
     build = ":Codeium Auth",
     opts = {
       tools = {
-        language_server = os.getenv("DEVBOX_PACKAGES_DIR") .. "/bin/codeium_language_server"
+        language_server = os.getenv("DEVBOX_PACKAGES_DIR") .. "/bin/codeium-lsp"
       }
     },
     config = function (_, opts)
