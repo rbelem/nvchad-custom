@@ -27,6 +27,13 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
+
+  t = {
+    ["<C-h>"] = { "<C-\\><C-n><C-w>h", "Window left" },
+    ["<C-j>"] = { "<C-\\><C-n><C-w>j", "Window right" },
+    ["<C-k>"] = { "<C-\\><C-n><C-w>k", "Window down" },
+    ["<C-l>"] = { "<C-\\><C-n><C-w>l", "Window up" },
+  },
 }
 
 -- more keybinds!
