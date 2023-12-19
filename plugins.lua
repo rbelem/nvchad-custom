@@ -190,13 +190,7 @@ local plugins = {
     },
     cmd = "Codeium",
     build = ":Codeium Auth",
-    opts = {
-      tools = {
-        language_server = os.getenv("DEVBOX_PACKAGES_DIR") .. "/bin/codeium-lsp"
-      }
-    },
     config = function (_, opts)
-      opts = (string.match(vim.loop.os_uname().version, "NixOS") and opts) or {}
       require("codeium").setup(opts)
     end
   },
