@@ -13,6 +13,7 @@ M.opts = {
     "go",
     "hcl",
     "html",
+    "java",
     "javascript",
     "json",
     "lua",

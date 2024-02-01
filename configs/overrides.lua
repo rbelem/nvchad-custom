@@ -22,6 +22,9 @@ M.mason = {
     -- ansible
     "ansible-language-server",
 
+    -- c
+    "clang-format",
+
     -- docker
     "hadolint",
 
@@ -38,6 +41,12 @@ M.mason = {
 
     -- html
     "html-lsp",
+
+    -- java
+    "jdtls",
+    --
+    "java-debug-adapter",
+    "java-test",
 
     -- javascript
     "deno",
@@ -86,6 +95,9 @@ M.mason = {
 
     -- typescript
     "typescript-language-server",
+
+    -- xml
+    "lemminx",
 
     -- yaml
     "yaml-language-server",

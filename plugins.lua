@@ -237,6 +237,18 @@ local plugins = {
   },
 
   {
+    "mfussenegger/nvim-jdtls",
+    event = "BufRead *.java",
+    ft = { "java" },
+    opts = require("custom.configs.jdtls").config,
+    dependencies = { "williamboman/mason-lspconfig.nvim" },
+    config = function (_, opts)
+      require("jdtls").start_or_attach(opts)
+      -- require("jdtls.dap").setup_dap_main_class_configs()
+    end
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
