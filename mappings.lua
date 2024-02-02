@@ -42,8 +42,8 @@ M.barbar = {
   n = {
     ["<tab>"] = { "<cmd> BufferNext<CR>", "Goto next buffer" },
     ["<S-tab>"] = { "<cmd> BufferPrevious<CR>", "Goto prev buffer" },
-    ["<C-tab>"] = { "<cmd> BufferMoveNext<CR>", "Move buffer to next position" },
-    ["<C-S-tab>"] = { "<cmd> BufferMovePrev<CR>", "Move buffer prev to previous position" },
+    ["<leader><tab>"] = { "<cmd> BufferMoveNext<CR>", "Move buffer to next position" },
+    ["<leader><S-tab>"] = { "<cmd> BufferMovePrev<CR>", "Move buffer prev to previous position" },
     ["<leader>x"] = { "<cmd> BufferClose<CR>", "Close buffer" },
     ["<leader>bl"] = { "<cmd> BufferPick<CR>", "List buffers"}
   },
