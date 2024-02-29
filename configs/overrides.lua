@@ -16,7 +16,7 @@ M.mason = {
     -- general
     "ltex-ls",
     --
-    "prettier",
+    "prettierd",
     "tree-sitter-cli",
 
     -- ansible
@@ -58,6 +58,7 @@ M.mason = {
     -- lua
     "lua-language-server",
     "stylua",
+    "selene",
 
     -- markdown
     "marksman",
@@ -71,8 +72,7 @@ M.mason = {
     -- python
     "python-lsp-server",
     --
-    "black",
-    "flake8",
+    "ruff-lsp",
 
     -- saltstack
     "salt-lsp",

@@ -9,8 +9,6 @@ local b = null_ls.builtins
 local sources = {
   -- general
   b.diagnostics.trail_space,
-  b.formatting.trim_newlines,
-  b.formatting.trim_whitespace,
 
   -- docker
   b.diagnostics.hadolint,
@@ -27,11 +25,7 @@ local sources = {
   b.formatting.goimports_reviser,
 
   -- html
-  b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
-
-  -- javascript
-  b.code_actions.eslint_d,
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
+  b.formatting.prettierd,
 
   -- lua
   b.formatting.stylua,
@@ -42,19 +36,12 @@ local sources = {
   b.formatting.nixfmt,
   b.formatting.nixpkgs_fmt,
 
-  -- perl
-  b.formatting.perltidy,
-
   -- shell
-  b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
   b.formatting.shfmt,
 
   -- terraform
   b.diagnostics.tfsec,
   b.formatting.terraform_fmt,
-
-  -- toml
-  b.formatting.taplo,
 
   -- yaml
   b.diagnostics.yamllint,
