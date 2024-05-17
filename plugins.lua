@@ -255,7 +255,7 @@ local plugins = {
     },
     event = "LspAttach",
     opts = {
-      mode = "topline",
+      max_lines = 8,
       separator = "-",
     },
   },
