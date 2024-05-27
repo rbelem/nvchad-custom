@@ -269,6 +269,26 @@ local plugins = {
   },
 
   {
+    "chentoast/marks.nvim",
+    event = "BufEnter",
+    opts = {
+      default_mappings = false,
+      excluded_filetypes = {
+        "qf",
+        "NvimTree",
+        "toggleterm",
+        "TelescopePrompt",
+        "alpha",
+        "netrw",
+        "neo-tree",
+      },
+    },
+    config = function (_, opts)
+      require("marks").setup(opts)
+    end
+  },
+
+  {
     "simrat39/symbols-outline.nvim",
     event = "LspAttach",
     config = function()

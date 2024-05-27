@@ -78,6 +78,24 @@ M.gitsigns = {
   },
 }
 
+M.marks = {
+  n = {
+    ["<leader>mm"] = { "<cmd> :lua require(\"marks\").toggle()<cr>", "Toggle mark" },
+    ["<leader>ml"] = { "<cmd> MarksListAll<cr>", "List marks" },
+    ["<leader>m,"] = { "<cmd> :lua require(\"marks\").set_next()<cr>", "Set next marks" },
+    ["<leader>m;"] = { "<cmd> :lua require(\"marks\").set()<cr>", "Set mark" },
+    ["<leader>mn"] = { "<cmd> :lua require(\"marks\").next()<cr>", "Next mark" },
+    ["<leader>mp"] = { "<cmd> :lua require(\"marks\").prev()<cr>", "Previous mark" },
+    ["<leader>m:"] = { "<cmd> :lua require(\"marks\").preview()<cr>", "Preview marks" },
+    ["<leader>mbn"] = { "<cmd> :lua require(\"marks\").next_bookmark()<cr>", "Next bookmark" },
+    ["<leader>mbp"] = { "<cmd> :lua require(\"marks\").prev_bookmark()<cr>", "Previous bookmark" },
+    ["<leader>md"] = { "<cmd> :lua require(\"marks\").delete()<cr>", "Delete mark" },
+    ["<leader>mdd"] = { "<cmd> :lua require(\"marks\").delete_line()<cr>", "Delete mark line" },
+    ["<leader>mbd"] = { "<cmd> :lua require(\"marks\").delete_bookmark()<cr>", "Delete bookmark" },
+    ["<leader>mx"] = { "<cmd> :lua require(\"marks\").delete_buf()<cr>", "Delete " }
+  },
+}
+
 M.nvimtree = {
   plugin = true,
 
