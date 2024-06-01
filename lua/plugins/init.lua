@@ -1,7 +1,14 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require("configs.overrides")
 
----@type NvPluginSpec[]
-local plugins = {
+return {
+
+  {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    config = function()
+      require "configs.conform"
+    end,
+  },
 
   -- Override plugin definition options
   {
@@ -12,13 +19,12 @@ local plugins = {
       {
         "nvimtools/none-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require "configs.null-ls"
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require "configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
 
@@ -44,7 +50,7 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = require("custom.configs.treesitter").opts
+    opts = require("configs.treesitter").opts
   },
 
   {
@@ -174,7 +180,7 @@ local plugins = {
       "nvim-tree/nvim-tree.lua"
     },
     event = "VeryLazy",
-    opts = require("custom.configs.nvim-possession").opts
+    opts = require("configs.nvim-possession").opts
   },
 
   {
@@ -198,7 +204,7 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function()
-      require("custom.configs.dap")
+      require("configs.dap")
     end,
   },
 
@@ -230,7 +236,7 @@ local plugins = {
 
   {
     "willothy/flatten.nvim",
-    opts = require("custom.configs.flatten").opts,
+    opts = require("configs.flatten").opts,
     -- Ensure that it runs first to minimize delay when opening file from terminal
     lazy = false,
     priority = 1001,
@@ -240,7 +246,7 @@ local plugins = {
     "mfussenegger/nvim-jdtls",
     event = "BufRead *.java",
     ft = { "java" },
-    opts = require("custom.configs.jdtls").config,
+    opts = require("configs.jdtls").config,
     dependencies = { "williamboman/mason-lspconfig.nvim" },
     config = function (_, opts)
       require("jdtls").start_or_attach(opts)
@@ -318,5 +324,3 @@ local plugins = {
     end
   },
 }
-
-return plugins
