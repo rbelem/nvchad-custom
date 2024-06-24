@@ -118,9 +118,6 @@ return {
         theme = "auto",
         component_separators = '|',
         section_separators = '',
-        disabled_filetypes = {
-          statusline = {'nvdash'}
-        },
       },
       sections = {
         lualine_a = {'mode'},

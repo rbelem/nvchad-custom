@@ -19,7 +19,7 @@ M.ui = {
   },
 
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
     buttons = {
       { "  Session List", "Spc s l", ":lua require(\"nvim-possession\").list()" },
       { "  Find File", "Spc f f", "Telescope find_files" },
