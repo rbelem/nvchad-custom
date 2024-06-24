@@ -30,7 +30,6 @@ M.opts = {
   },
   save_hook = function()
     close_nvimtree()
-    require("nvchad.term").close_all_terms()
     close_blacklisted_buf()
     -- persisting barbar.nvim state
     vim.api.nvim_exec_autocmds('User', {pattern = 'SessionSavePre'})
