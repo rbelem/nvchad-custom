@@ -10,7 +10,7 @@ M.opts = {
       vim.notify(vim.api.nvim_buf_get_name(bufnr))
       if is_blocking then
         -- Hide the terminal while it's blocking
-        require("nvterm.terminal").toggle_all_terms()
+        require("nvchad.term").toggle_all_terms()
       else
         -- If it's a normal file, just switch to its window
         vim.api.nvim_set_current_win(winnr)
