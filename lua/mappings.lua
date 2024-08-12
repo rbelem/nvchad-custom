@@ -61,10 +61,10 @@ map("n", "mx", "<cmd> :lua require(\"marks\").delete_buf()<CR>", { desc = "Delet
 map("n", "<leader>a", "<cmd> NvimTreeToggle <CR>", { desc = "toggle nvimtree" })
 
 -- session_manager
-map("n", "<leader>sl", "<cmd> :lua require(\"nvim-possession\").list()<CR>", { desc = "Session list" })
-map("n", "<leader>sn", "<cmd> :lua require(\"nvim-possession\").new()<CR>", { desc = "New Session" })
-map("n", "<leader>su", "<cmd> :lua require(\"nvim-possession\").update()<CR>", { desc = "Session update" })
-map("n", "<leader>sd", "<cmd> :lua require(\"nvim-possession\").delete()<CR>", { desc = "Delete current session" })
+map("n", "<leader>sl", "<cmd>Telescope persisted<CR>", { desc = "Session list" })
+map("n", "<leader>sn", "<cmd>SessionSaveInput<CR>", { desc = "New Session" })
+map("n", "<leader>ss", "<cmd>SessionSave<CR>", { desc = "Session Save" })
+map("n", "<leader>sd", "<cmd>SessionDelete<CR>", { desc = "Delete current session" })
 
 -- Telescope
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })

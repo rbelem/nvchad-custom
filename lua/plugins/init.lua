@@ -171,13 +171,44 @@ return {
   -- },
 
   {
-    "gennaro-tedesco/nvim-possession",
-    dependencies = {
-      "ibhagwan/fzf-lua",
-      "nvim-tree/nvim-tree.lua"
-    },
-    event = "VeryLazy",
-    opts = require("configs.nvim-possession").opts
+    "olimorris/persisted.nvim",
+    lazy = false, -- make sure the plugin is always loaded at startup
+    config = function (_, opts)
+
+      local ft_blacklist = {
+        'gitcommit',
+        'nvdash',
+        'NvimTree'
+      }
+
+      require("persisted").setup({
+        autostart = false,
+        follow_cwd = false,
+        sould_save = function()
+          if vim.tbl_contains(ft_blacklist, vim.bo.filetype) then
+            return false
+          end
+          return true
+        end,
+      })
+      require("telescope").load_extension("persisted")
+
+      local SessionSaveInput = function ()
+        vim.ui.input({ prompt = 'Enter session name: ' }, function(input)
+          if input == nil or input == '' then
+            return
+          end
+          local session_file = vim.fn.stdpath("data") .. "/sessions/" .. input .. ".vim"
+          require("persisted").save({ session = session_file })
+        end)
+      end
+
+      vim.api.nvim_create_user_command(
+        "SessionSaveInput",
+        SessionSaveInput,
+        { desc = "Save Session" }
+      )
+    end
   },
 
   {
