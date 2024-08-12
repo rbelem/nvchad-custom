@@ -65,3 +65,7 @@ map("n", "<leader>sl", "<cmd> :lua require(\"nvim-possession\").list()<CR>", { d
 map("n", "<leader>sn", "<cmd> :lua require(\"nvim-possession\").new()<CR>", { desc = "New Session" })
 map("n", "<leader>su", "<cmd> :lua require(\"nvim-possession\").update()<CR>", { desc = "Session update" })
 map("n", "<leader>sd", "<cmd> :lua require(\"nvim-possession\").delete()<CR>", { desc = "Delete current session" })
+
+-- Telescope
+map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
+map("n", "<leader>fw", "<cmd>Telescope grep_string<CR>", { desc = "telescope grep for word under cursor" })
