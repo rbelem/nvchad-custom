@@ -14,6 +14,31 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
+      {
+        "nvim-java/nvim-java",
+        config = function()
+          require("java").setup({
+            root_markers = {
+              "settings.gradle",
+              "settings.gradle.kts",
+              "pom.xml",
+              "build.gradle",
+              "mvnw",
+              "gradlew",
+              "build.gradle",
+              "build.gradle.kts",
+              ".git",
+            },
+            java_test = {
+              enable = true,
+            },
+            java_debug_adapter = {
+              enable = true,
+            },
+          })
+          require("lspconfig").jdtls.setup({})
+        end,
+      },
       "williamboman/mason-lspconfig.nvim",
       -- format & linting
       {
@@ -276,18 +301,6 @@ return {
   },
 
   {
-    "mfussenegger/nvim-jdtls",
-    event = "BufRead *.java",
-    ft = { "java" },
-    opts = require("configs.jdtls").config,
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
-    config = function (_, opts)
-      require("jdtls").start_or_attach(opts)
-      -- require("jdtls.dap").setup_dap_main_class_configs()
-    end
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
@@ -328,10 +341,10 @@ return {
   },
 
   {
-    "simrat39/symbols-outline.nvim",
+    "hedyhli/outline.nvim",
     event = "LspAttach",
     config = function()
-      require("symbols-outline").setup()
+      require("outline").setup()
     end
   },
 

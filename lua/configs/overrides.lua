@@ -12,6 +12,10 @@ M.cmp = {
 }
 
 M.mason = {
+  registries = {
+    "github:nvim-java/mason-registry",
+    "github:mason-org/mason-registry",
+  },
   ensure_installed = {
     -- general
     "ltex-ls",
@@ -118,6 +122,7 @@ M.mason_lspconfig = {
   "golangci_lint_ls",
   "gopls",
   "html",
+  "jdtls",
   "jsonls",
   "ltex",
   "lua_ls",
