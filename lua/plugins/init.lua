@@ -14,42 +14,11 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      {
-        "nvim-java/nvim-java",
-        config = function()
-          require("java").setup({
-            root_markers = {
-              "settings.gradle",
-              "settings.gradle.kts",
-              "pom.xml",
-              "build.gradle",
-              "mvnw",
-              "gradlew",
-              "build.gradle",
-              "build.gradle.kts",
-              ".git",
-            },
-            java_test = {
-              enable = true,
-            },
-            java_debug_adapter = {
-              enable = true,
-            },
-          })
-          require("lspconfig").jdtls.setup({})
-        end,
-      },
+      "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      -- format & linting
-      {
-        "nvimtools/none-ls.nvim",
-        config = function()
-          require "configs.null-ls"
-        end,
-      },
+      "jay-babu/mason-null-ls.nvim",
     },
     config = function()
-      require "configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
 
@@ -69,8 +38,30 @@ return {
 
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = overrides.mason_lspconfig,
     dependencies = {"williamboman/mason.nvim"},
+    config = function()
+      require "configs.mason-lspconfig"
+    end,
+  },
+
+  {
+    "nvim-java/nvim-java",
+  },
+
+  {
+    "nvimtools/none-ls.nvim",
+  },
+
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "nvimtools/none-ls.nvim",
+    },
+    config = function()
+      require "configs.mason-null-ls"
+    end,
   },
 
   {

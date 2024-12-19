@@ -1,0 +1,26 @@
+require("null-ls").setup()
+require("mason-null-ls").setup({
+  automatic_setup = true,
+  ensure_installed = {
+    "gofmt",
+    "goimports",
+    "goimports_reviser",
+    "golangci_lint",
+    "gitlint",
+    "gitrebase",
+    "gitsigns",
+    "hadolint",
+    "nixfmt",
+    "nixpkgs_fmt",
+    "stylua",
+    "shfmt",
+    "shellcheck",
+    "statix",
+    "terraform_fmt",
+    "tfsec",
+    "trail_space",
+    "yamlfmt",
+    "yamllint",
+  },
+  handlers = {},
+})

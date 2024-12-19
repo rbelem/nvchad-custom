@@ -39,6 +39,8 @@ M.ui = {
   tabufline = {
     enabled = false,
   },
+
+  mason = { cmd = true, pkgs = {} },
 }
 
 return M
