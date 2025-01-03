@@ -5,7 +5,7 @@ M.opts = {
   window = {
     open = "smart"
   },
-  callbacks = {
+  hooks = {
     post_open = function(bufnr, winnr, ft, is_blocking)
       vim.notify(vim.api.nvim_buf_get_name(bufnr))
       if is_blocking then
